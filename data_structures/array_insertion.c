@@ -1,4 +1,5 @@
 #include<stdio.h>
+// main body starts here
 int main()
 {
     int i,n=0,p,k,a[n];
@@ -21,4 +22,5 @@ int main()
     printf("The array after insertion is: \n");
     for (i=1;i<=n;i++)
         printf("%d ",a[i]);
+    return 0;
 }
