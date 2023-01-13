@@ -9,4 +9,5 @@ int main(){
     printf("The array is: \n");
     for (i=1;i<=n;i++)
         printf("%d ",a[i]);
+    return 0;
 }
