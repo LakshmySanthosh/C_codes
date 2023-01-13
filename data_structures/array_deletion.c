@@ -18,4 +18,5 @@ int main()
     printf("The array after deletion is:\n");
     for(i=1;i<=n;i++)
         printf("%d ",a[i]);
+    return 0;
 }
