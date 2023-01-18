@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n=0,a[n],i,e,flag=0;
+    int a[50],n,i,e,flag=0;
     printf("Enter the number of elements of the array: ");
     scanf("%d",&n);
     printf("Enter the elements: \n");
@@ -18,10 +18,11 @@ int main()
     scanf("%d",&e);
     for(i=1;i<=n;i++)
     {
-        printf("%d %d \n",a[i],e);
         if(a[i]==e)
+        {
             printf("%d is found at position %d\n",e,i);
             flag=1;
+        }
     }
     if(flag==0)
         printf("The element is not found");
