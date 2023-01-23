@@ -1,10 +1,67 @@
 #include<stdio.h>
+int n,i,a[50];
 
 //Array creation block
 int arrayCreation()
 {
-
+    printf("Enter the number of elements: \n");
+    scanf("%d",n);
+    printf("Enter the elements:\n");
+    for(i=1;i<=n;i++)
+        scanf("%d",a[i]);
+    printf("ARRAY IS  CREATED");
 }
+
+int arrayTraversion()
+{
+    printf("The array is: ");
+    for(i=1;i<=n;i++)
+        printf("%d ",a[i]);  
+    printf("\nTHE ARRAY IS TRAVERSED"); 
+}
+
+deletionBeginning()
+{
+    printf("The array before deletion: ");
+    for(i=1;i<=n;i++)
+        printf("%d ",a[i]);  
+    for(i=1;i<n;i++)
+        a[i]=a[i+1];
+    n=n-1;
+    printf("The array after deletion: ");
+    for(i=1;i<=n;i++)
+        printf("%d ",a[i]); 
+    printf("\nThe element at the beginning is deleted") ;
+}
+
+deletionEnd()
+{
+    printf("The array before deletion: ");
+    for(i=1;i<=n;i++)
+        printf("%d ",a[i]);  
+    n=n-1;
+    printf("The array after deletion: ");
+    for(i=1;i<=n;i++)
+        printf("%d ",a[i]); 
+    printf("\nThe element at the end is deleted") ; 
+}
+
+deletionAfter();
+{
+    printf("Enter the element to delete the element after it");
+
+    printf("The array before deletion: ");
+    for(i=1;i<=n;i++)
+        printf("%d ",a[i]);  
+    for(i=1;i<n;i++)
+        a[i]=a[i+1];
+    n=n-1;
+    printf("The array after deletion: ");
+    for(i=1;i<=n;i++)
+        printf("%d ",a[i]); 
+    printf("\nThe element at the beginning is deleted") ;
+}
+
 int main()
 {
     int choice;
@@ -80,10 +137,32 @@ int main()
         }
         
         case 5:
-        printf("Enter 1 for insertion at beginning\n");
-        printf("Enter 2 for insertion at end\n");
+        printf("Enter 1 for searching an element using its position\n");
+        printf("Enter 2 for searching an element using its value\n");
+        scanf("%d",&choice);
+        //nested switch
+        switch(choice)
+        {
+            case 1:
+            searchPosition();
 
+            case 2:
+            searchValue();
+        }
 
+        case 6:
+        printf("Enter 1 for sorting in ascending order\n");
+        printf("Enter 2 for sorting in descending order\n");
+        scanf("%d",&choice);
+        //nested switch
+        switch(choice)
+        {
+            case 1:
+            sortAscending();
+
+            case 2:
+            sortDescending();
+        }
     }
 }
 
