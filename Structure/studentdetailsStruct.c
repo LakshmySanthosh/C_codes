@@ -6,6 +6,7 @@ struct student
     float marks;
 }S3={8,"Rohit",90.2};
 struct student S1={4,"Anju",98.7};
+struct student S4={.name="Roshni",.marks=96.9,.rollno=9};
 int main()
 {
     struct student S2;
@@ -18,4 +19,5 @@ int main()
     printf("S1      %d     %s      %f\n",S1.rollno,S1.name,S1.marks);
     printf("S2      %d     %s      %f\n",S2.rollno,S2.name,S2.marks);
     printf("S3      %d     %s      %f\n",S3.rollno,S3.name,S3.marks);
+    printf("S4      %d     %s      %f\n",S4.rollno,S4.name,S4.marks);
 }
