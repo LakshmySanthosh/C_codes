@@ -1,4 +1,5 @@
 #include<stdio.h>
+// main block
 int main(){
     int a[10], num1, num2, rev[10];
     // initialization of element of the array
