@@ -1,4 +1,5 @@
 #include<stdio.h>
+// main block
 int main()
 {
     int i,j,n;
