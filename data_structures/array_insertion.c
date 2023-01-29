@@ -1,26 +1,42 @@
+//program to create an array and insert an element in any particular position
+
 #include<stdio.h>
-// main body starts here
 int main()
 {
+    //initializing variables
     int i,n=0,p,k,a[n];
-    printf("Enter the  number of elements of the array: ");
+    printf("\n------------------ARRAY------------------\n\n");
+
+     //talking number of elements as input
+    printf("Enter the number of elements of the array: ");
     scanf("%d",&n);
-    printf("Enter the  elements: \n");
+
+    //taking input elements
+    printf("\nEnter the elements:\n");
     for (i=1;i<=n;i++)
         scanf("%d",&a[i]);
-    printf("The array is: \n");
+    
+    //traversing and printing array
+    printf("\nThe array is: \n");
     for (i=1;i<=n;i++)
         printf("%d ",a[i]);
-    printf("\nEnter the position in which you want to insert: ");
+    
+    //taking the position in which the user want to insert element as input
+    printf("\n\nEnter the position in which you want to insert: ");
     scanf("%d",&p);
-    printf("Enter the element you want to insert: ");
+
+    //taking the element the user want to insert as input 
+    printf("\nEnter the element you want to insert: ");
     scanf("%d",&k);
+
+    //insertion
     for (i=n;i>=p;i--)
         a[i+1]=a[i];
     a[p]=k;
     n=n+1;
-    printf("The array after insertion is: \n");
+
+    //printing the array after insertion
+    printf("\nThe array after insertion is: \n");
     for (i=1;i<=n;i++)
         printf("%d ",a[i]);
-    return 0;
 }
