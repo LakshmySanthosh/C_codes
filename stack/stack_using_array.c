@@ -1,7 +1,13 @@
+//program to push, pop, peek or display stack using array
+
 #include <stdio.h>
 #define  N 5
+
+//initialise values
 int top=-1;
 int stack[N];
+
+//function to push data into the stack
 void push()
 {
     int x;
@@ -19,6 +25,7 @@ void push()
         }
 }
 
+//function to pop data from the stack
 void pop()
 {
     int item;
@@ -33,6 +40,7 @@ void pop()
     
 }
 
+//function to peek(view the topmost element) from the stack
 void peek()
 {
     if(top==-1)
@@ -41,6 +49,7 @@ void peek()
         printf("%d is the topmost element",stack[top]);
 }
 
+//function to display the elements of stack
 void display()
 {   
     int i;
@@ -54,19 +63,25 @@ void display()
     }
 }
 
+//main function - we are calling the above defined functions in the main function as per the input given by the user
 void main()
 {
     int choice,n;
     printf("\n----------------STACK USING ARRAY----------------\n") ;
+    
+    //defining start for calling using goto function
     start:
     printf("\n\nEnter 1 for push\n");
     printf("Enter 2 for pop\n");
     printf("Enter 3 for peek\n");
     printf("Enter 4 for display\n");
     printf("Enter any other key to exit\n");
+    
+    //taking choice as input
     printf("\nEnter your choice: ");
     scanf("%d",&choice);
     
+    //using switch to go to the functions as per users choice
     switch(choice)
     {
         case 1:
