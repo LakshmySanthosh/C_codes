@@ -16,12 +16,12 @@ int main()
             if(a[i]==a[j])
                 count++;
         }
-            if(count>m)
-    {
-        num=a[i];
-        m=count;
-        count=0;
-    }
+        if(count>m)
+        {
+            num=a[i];
+            m=count;
+            count=0;
+        }
     }
 
     printf("\nThe mode of the given data is %d",num);
