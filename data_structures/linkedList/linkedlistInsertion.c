@@ -9,7 +9,7 @@ typedef struct Node
     int data;
     struct Node *link;
 } node;
-node *head,*newnode,*temp,*ptr,*nptr;
+node *head,*newnode,*ptr;
 
 //function to create a linkedlist
 void linkedListCreation()
