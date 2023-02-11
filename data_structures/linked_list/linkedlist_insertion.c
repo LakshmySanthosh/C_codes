@@ -15,7 +15,7 @@ node *head,*newnode,*temp,*ptr,*nptr;
 void linkedListCreation()
 {
     int n,i;
-    printf("\n---------------LINKED LIST---------------\n\n");
+    printf("\n---------------LINKED LIST---------------\n");
     printf("\nEnter the number of elements: ");
     scanf("%d",&n);
     head=NULL;
@@ -35,6 +35,7 @@ void linkedListCreation()
 //function for traversing and printing a linkedlist
 void linkedListTraversion()
 {
+    system("cls");
     ptr=head;
     printf("\nThe linked list is: \n");
     while(ptr!=NULL)
@@ -64,7 +65,7 @@ void linkedListInsertionEnd()
     ptr=head;
     //memory allocation using malloc
     new= (node*)malloc(sizeof(node));
-    printf("Enter the number to insert at end: ");
+    printf("\nEnter the number to insert at end: ");
     scanf("%d",&new->data);
     while(ptr->link!=0)
         ptr=ptr->link;    
@@ -81,7 +82,7 @@ void linkedListInsertionAfterPos()
     //memory allocation using malloc
     new= (node*)malloc(sizeof(node));
     int pos,i;
-    printf("Enter the position after which you want to insert: ");
+    printf("\nEnter the position after which you want to insert: ");
     scanf("%d",&pos);
     printf("Enter the value you want to insert: "); 
     scanf("%d",&new->data);
@@ -100,7 +101,7 @@ void linkedListInsertionAtPos()
     //memory allocation using malloc
     new= (node*)malloc(sizeof(node));
     int pos,i;
-    printf("Enter the position at which you want to insert: ");
+    printf("\nEnter the position at which you want to insert: ");
     scanf("%d",&pos);
     printf("Enter the value you want to insert: "); 
     scanf("%d",&new->data);
@@ -119,7 +120,7 @@ void linkedListInsertionAfterEle()
     //memory allocation using malloc
     new= (node*)malloc(sizeof(node));
     int ele;
-    printf("Enter the element after which you want to insert: ");
+    printf("\nEnter the element after which you want to insert: ");
     scanf("%d",&ele);
     printf("Enter the value you want to insert: "); 
     scanf("%d",&new->data);
@@ -131,36 +132,45 @@ void linkedListInsertionAfterEle()
 }
 
 //function for insertion, this displays the options by which insertion can be done
-void linkedlistInsertion()
+void linkedListInsertion()
 {
-    int choice;
-    printf("\n-----------------INSERTION-----------------\n");
-    printf("\nEnter 1 to insert at beginning");
-    printf("\nEnter 2 to insert at end");
-    printf("\nEnter 3 to insert after a position");
-    printf("\nEnter 4 to insert at a position");
-    printf("\nEnter 5 to insert after an element \n");
-    scanf("%d",&choice);
-    //using switch to switch between insertion methods
-    switch(choice)
-    {
-        case 1:
-        linkedListInsertionBeginning();
-        break;
+    int choice=1;
+    while(choice<6)
+    { 
+        printf("\n\n-----------------INSERTION-----------------\n");
+        printf("\nEnter 1 to insert at beginning");
+        printf("\nEnter 2 to insert at end");
+        printf("\nEnter 3 to insert after a position");
+        printf("\nEnter 4 to insert at a position");
+        printf("\nEnter 5 to insert after an element");
+        printf("\nEnter any other number to stop insertion\n");
+        scanf("%d",&choice);
+        //using switch to switch between insertion methods
+        switch(choice)
+        {
+            case 1:
+            linkedListInsertionBeginning();
+            break;
 
-        case 2:
-        linkedListInsertionEnd();
-        break;
+            case 2:
+            linkedListInsertionEnd();
+            break;
 
-        case 3:
-        linkedListInsertionAfterPos();
-        break;
+            case 3:
+            linkedListInsertionAfterPos();
+            break;
 
-        case 4:
-        linkedListInsertionAtPos();
+            case 4:
+            linkedListInsertionAtPos();
+            break;
 
-        case 5:
-        linkedListInsertionAfterEle();
+            case 5:
+            linkedListInsertionAfterEle();
+            break;
+
+            default:
+            printf("\n----------Program Terminated----------\n\n");
+        }
     }
 }
 
@@ -169,6 +179,6 @@ int main()
 {
     linkedListCreation();
     linkedListTraversion();
-    linkedlistInsertion();
+    linkedListInsertion();
     return 0;
 }
