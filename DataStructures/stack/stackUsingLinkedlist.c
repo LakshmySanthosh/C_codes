@@ -26,11 +26,11 @@ void push()
         scanf("%d",&x);
         new->link=NULL;
         new->data=x;
-        if(head==NULL)
-            head=new;
-        else
-            ptr->link=new;
-        ptr=new;
+        if(head==NULL)  
+            new->link=NULL; 
+        else   
+            new->link=head;        
+        head=new;
         printf("\n%d is pushed into the stack",x);
     }
 
@@ -45,15 +45,9 @@ void pop()
     else
     {
         ptr=head;
-        while(ptr->link!=NULL)
-        {
-            nptr=ptr;
-            ptr=ptr->link;
-        }
         item=ptr->data; 
         printf("\n%d is popped",item);
-        nptr->link=NULL;
-        
+        head=ptr->link;
     }
 }
 
@@ -66,12 +60,8 @@ void peek()
         printf("Underflow");
     else
     {
-        while(ptr->link!=NULL)
-        {
-            nptr=ptr;
-            ptr=ptr->link;
-        }
-        item=ptr->data;
+        ptr=head;
+        item=ptr->data; 
         printf("\n%d is the topmost element",item);
     }
 }
@@ -85,10 +75,10 @@ void display()
         printf("Underflow");
     else
     {
-        printf("\nThe stack is: ");
+        printf("\nThe stack is: \n");
         while(ptr!=NULL)
         {
-            printf("%d ",ptr->data);
+            printf("%d\n",ptr->data);
             ptr=ptr->link;
         }
     }
@@ -97,42 +87,43 @@ void display()
 //main function - we are calling the above defined functions in the main function as per the input given by the user
 void main()
 {
-    int choice,n;
+    int choice=1,n;
     printf("\n-------------STACK USING LINKEDLIST------------\n") ;
-    
-    //defining start for calling using goto function
-    start:
-    printf("\n\nEnter 1 for push\n");
-    printf("Enter 2 for pop\n");
-    printf("Enter 3 for peek\n");
-    printf("Enter 4 for display\n");
-    printf("Enter any other key to exit\n");
-    
-    //taking choice as input
-    printf("\nEnter your choice: ");
-    scanf("%d",&choice);
-    
-    //using switch to go to the functions as per users choice
-    switch(choice)
+
+    while(choice<5)
     {
-        case 1:
-        push();
-        goto start;
+        printf("\nEnter 1 for push\n");
+        printf("Enter 2 for pop\n");
+        printf("Enter 3 for peek\n");
+        printf("Enter 4 for display\n");
+        printf("Enter any other key to exit\n");
+        
+        //taking choice as input
+        printf("\nEnter your choice: ");
+        scanf("%d",&choice);
+        
+        //using switch to go to the functions as per users choice
+        switch(choice)
+        {
+            case 1:
+            push();
+            break;
 
-        case 2:
-        pop();
-        goto start;
+            case 2:
+            pop();
+            break;
 
-        case 3:
-        peek();
-        goto start;
+            case 3:
+            peek();
+            break;
 
-        case 4:
-        display();
-        goto start;
+            case 4:
+            display();
+            break;
 
-        default:
-        printf("\nInvalid choice\nExiting the program!!!");
-        break;
+            default:
+            printf("\nInvalid choice\nExiting the program!!!");
+            break;
+        }
     }
 }

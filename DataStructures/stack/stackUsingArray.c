@@ -57,51 +57,52 @@ void display()
         printf("Underflow");
     else
     {
-        printf("The stack is: ");
+        printf("The stack is:\n");
         for(i=top;i>=0;i--)
-            printf("%d ",stack[i]);
+            printf("%d\n",stack[i]);
     }
 }
 
 //main function - we are calling the above defined functions in the main function as per the input given by the user
 void main()
 {
-    int choice,n;
+    int choice=1,n;
     printf("\n----------------STACK USING ARRAY----------------\n") ;
     
-    //defining start for calling using goto function
-    start:
-    printf("\n\nEnter 1 for push\n");
-    printf("Enter 2 for pop\n");
-    printf("Enter 3 for peek\n");
-    printf("Enter 4 for display\n");
-    printf("Enter any other key to exit\n");
-    
-    //taking choice as input
-    printf("\nEnter your choice: ");
-    scanf("%d",&choice);
-    
-    //using switch to go to the functions as per users choice
-    switch(choice)
+    while(choice<5)
     {
-        case 1:
-        push();
-        goto start;
+        printf("\n\nEnter 1 for push\n");
+        printf("Enter 2 for pop\n");
+        printf("Enter 3 for peek\n");
+        printf("Enter 4 for display\n");
+        printf("Enter any other key to exit\n");
+        
+        //taking choice as input
+        printf("\nEnter your choice: ");
+        scanf("%d",&choice);
+        
+        //using switch to go to the functions as per users choice
+        switch(choice)
+        {
+            case 1:
+            push();
+            break;
 
-        case 2:
-        pop();
-        goto start;
+            case 2:
+            pop();
+            break;
 
-        case 3:
-        peek();
-        goto start;
+            case 3:
+            peek();
+            break;
 
-        case 4:
-        display();
-        goto start;
+            case 4:
+            display();
+            break;
 
-        default:
-        printf("\nInvalid choice\nExiting the program!!!");
-        break;
+            default:
+            printf("\nInvalid choice\nExiting the program!!!");
+            break;
+        }
     }
 }
