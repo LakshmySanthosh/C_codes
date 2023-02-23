@@ -1,7 +1,7 @@
 //program to push, pop, peek or display stack using array
 
 #include <stdio.h>
-#define  N 5
+#define  N 50
 
 //initialise values
 int top=-1;
@@ -14,9 +14,7 @@ void push()
     printf("\nEnter data to push: ");
     scanf("%d",&x);
     if(top==N-1)
-    {
         printf("Overflow");
-    }
     else
         {
             top++;
@@ -30,7 +28,7 @@ void pop()
 {
     int item;
     if(top==-1)
-        ("Underflow");
+        printf("Underflow");
     else
     {
         item=stack[top];
