@@ -3,27 +3,48 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//typedefining struct Node to node, so that we can call them easily using node
-typedef struct Node 
+//typedefining struct node to node, so that we can call them easily using node
+typedef struct node 
 {
     int data;
 
     //self referencial structure, here we cannot use short form node
-    struct Node *next;
+    struct node *link;
 } node;
 
-node *head;
+node *head,*ptr,*new;
+
+//function to create a linkedlist
+void linkedlistCreation()
+{
+    int n,i;
+    printf("\n---------------LINKED LIST---------------\n");
+    printf("\nEnter the number of elements: ");
+    scanf("%d",&n);
+    head=ptr=NULL;
+    for(i=1;i<=n;i++)
+    {
+        new=malloc(sizeof(node));
+        printf("Enter data %d: ",i);
+        scanf("%d",&new->data);
+        new->link=NULL;
+        if(head==NULL)
+            head=new;
+        else
+            ptr->link=new;
+        ptr=new;
+    }
+}
 
 //function to print linkedlist
-void linkedListTraversion()
+void linkedlistTraversion()
 {
-    node *ptr;
     ptr=head;
     printf("\nThe linked list after traversion is: \n");
     while(ptr!=NULL)
     {
         printf("%d ",ptr->data);
-        ptr=ptr->next;
+        ptr=ptr->link;
     }
 }
 
@@ -31,33 +52,9 @@ void linkedListTraversion()
 //main function
 int main()
 {
-    //initializing values
-    node *newnode,*ptr;
-    int n,i;
-
-    //taking number of elements as input
-    printf("\n---------------LINKED LIST---------------\n\n");
-    printf("Enter the number of elements: ");
-    scanf("%d",&n);
-    ptr=head=NULL;
-    
-    //taking the input elements
-    printf("\nEnter the elements:\n");
-    for(i=1;i<=n;i++)
-    {
-        //memory allocation using malloc
-        newnode=(node*)malloc(sizeof(node));
-        scanf("%d",&(newnode->data));
-        newnode->next=NULL;
-        
-        if(head==NULL)
-            head=newnode;
-        else
-            ptr->next=newnode;
-        ptr=newnode;
-    }
-
+    //calling the function to create linked list
+    linkedlistCreation();
     //calling the function to print the linked list
-    linkedListTraversion();
+    linkedlistTraversion();
     return 0;
 }

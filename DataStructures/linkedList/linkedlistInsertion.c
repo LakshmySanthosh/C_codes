@@ -4,15 +4,16 @@
 #include<stdlib.h>
 
 //using structure to form a model of a node
-typedef struct Node
+typedef struct node
 {
     int data;
-    struct Node *link;
+    struct node *link;
 } node;
+
 node *head,*ptr,*new;
 
 //function to create a linkedlist
-void linkedListCreation()
+void linkedlistCreation()
 {
     int n,i;
     printf("\n---------------LINKED LIST---------------\n");
@@ -33,9 +34,9 @@ void linkedListCreation()
     }
 }
 //function for traversing and printing a linkedlist
-void linkedListTraversion()
+void linkedlistTraversion()
 {
-    system("cls");
+
     ptr=head;
     printf("\nThe linked list is: \n");
     while(ptr!=NULL)
@@ -46,38 +47,38 @@ void linkedListTraversion()
 }
 
 //function to insert an element at the beginning of the linkedlist
-void linkedListInsertionBeginning()
+void linkedlistInsertionBeginning()
 {
     //memory allocation using malloc
-    new= (node*)malloc(sizeof(node));
+    new= malloc(sizeof(node));
     printf("\nEnter the number to insert at beginning: ");
     scanf("%d",&new->data);
     new->link=head;
     head=new;
-    linkedListTraversion();
+    linkedlistTraversion();
 }
 
 //function to insert an element at the end of the linkedlist
-void linkedListInsertionEnd()
+void linkedlistInsertionEnd()
 {
     ptr=head;
     //memory allocation using malloc
-    new= (node*)malloc(sizeof(node));
+    new= malloc(sizeof(node));
     printf("\nEnter the number to insert at end: ");
     scanf("%d",&new->data);
-    while(ptr->link!=0)
+    while(ptr->link!=NULL)
         ptr=ptr->link;    
     ptr->link=new;
     new->link=NULL;
-    linkedListTraversion();
+    linkedlistTraversion();
 }
 
 //function to insert an element after the given position in the linkedlist
-void linkedListInsertionAfterPos()
+void linkedlistInsertionAfterPos()
 {
     ptr=head;
     //memory allocation using malloc
-    new= (node*)malloc(sizeof(node));
+    new= malloc(sizeof(node));
     int pos,i;
     printf("\nEnter the position after which you want to insert: ");
     scanf("%d",&pos);
@@ -87,15 +88,15 @@ void linkedListInsertionAfterPos()
         ptr=ptr->link;
     new->link=ptr->link;
     ptr->link=new;
-    linkedListTraversion();
+    linkedlistTraversion();
 }
 
 //function to insert an element at the given position in the linkedlist
-void linkedListInsertionAtPos()
+void linkedlistInsertionAtPos()
 {
     ptr=head;
     //memory allocation using malloc
-    new= (node*)malloc(sizeof(node));
+    new= malloc(sizeof(node));
     int pos,i;
     printf("\nEnter the position at which you want to insert: ");
     scanf("%d",&pos);
@@ -105,15 +106,15 @@ void linkedListInsertionAtPos()
         ptr=ptr->link;
     new->link=ptr->link;
     ptr->link=new;
-    linkedListTraversion();
+    linkedlistTraversion();
 }
 
 //function to insert an element after the given element in the linkedlist
-void linkedListInsertionAfterEle()
+void linkedlistInsertionAfterEle()
 {
     ptr=head;
     //memory allocation using malloc
-    new= (node*)malloc(sizeof(node));
+    new= malloc(sizeof(node));
     int ele;
     printf("\nEnter the element after which you want to insert: ");
     scanf("%d",&ele);
@@ -123,11 +124,11 @@ void linkedListInsertionAfterEle()
         ptr=ptr->link;
     new->link=ptr->link;
     ptr->link=new;
-    linkedListTraversion();
+    linkedlistTraversion();
 }
 
 //function for insertion, this displays the options by which insertion can be done
-void linkedListInsertion()
+void linkedlistInsertion()
 {
     int choice=1;
     while(choice<6)
@@ -144,23 +145,23 @@ void linkedListInsertion()
         switch(choice)
         {
             case 1:
-            linkedListInsertionBeginning();
+            linkedlistInsertionBeginning();
             break;
 
             case 2:
-            linkedListInsertionEnd();
+            linkedlistInsertionEnd();
             break;
 
             case 3:
-            linkedListInsertionAfterPos();
+            linkedlistInsertionAfterPos();
             break;
 
             case 4:
-            linkedListInsertionAtPos();
+            linkedlistInsertionAtPos();
             break;
 
             case 5:
-            linkedListInsertionAfterEle();
+            linkedlistInsertionAfterEle();
             break;
 
             default:
@@ -172,8 +173,8 @@ void linkedListInsertion()
 //main function
 int main()
 {
-    linkedListCreation();
-    linkedListTraversion();
-    linkedListInsertion();
+    linkedlistCreation();
+    linkedlistTraversion();
+    linkedlistInsertion();
     return 0;
 }

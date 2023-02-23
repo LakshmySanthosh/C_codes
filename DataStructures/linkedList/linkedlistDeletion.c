@@ -34,6 +34,7 @@ void linkedListCreation()
         ptr=new;
     }
 }
+
 //function for traversing and printing a linkedlist
 void linkedListTraversion()
 {
