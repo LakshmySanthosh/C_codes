@@ -65,11 +65,12 @@ void display()
 void main()
 {
     int choice=1,n;
-    printf("\n----------------STACK USING ARRAY----------------\n") ;
+    printf("\n----------------STACK USING ARRAY----------------") ;
     
     while(choice<5)
     {
-        printf("\n\nEnter 1 for push\n");
+        printf("\n\n---------MAIN MENU---------\n");
+        printf("Enter 1 for push\n");
         printf("Enter 2 for pop\n");
         printf("Enter 3 for peek\n");
         printf("Enter 4 for display\n");
