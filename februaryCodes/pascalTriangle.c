@@ -19,7 +19,7 @@ int main()
         for(j=0;j<=i;j++)
         {
             nCr=fact(i)/(fact(j)*fact(i-j));
-            printf("%3d",nCr);
+            printf("%d ",nCr);
         }
         printf("\n");
     }
