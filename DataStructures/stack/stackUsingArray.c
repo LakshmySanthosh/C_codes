@@ -16,11 +16,11 @@ void push()
     if(top==N-1)
         printf("Overflow");
     else
-        {
-            top++;
-            stack[top]=x;
-            printf("%d is pushed into the stack",x);
-        }
+    {
+        top++;
+        stack[top]=x;
+        printf("%d is pushed into the stack",x);
+    }
 }
 
 //function to pop data from the stack
