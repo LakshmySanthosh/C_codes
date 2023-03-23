@@ -63,7 +63,7 @@ void display()
     }
 }
 
-//main function - we are calling the above defined functions in the main function as per the input given by the user
+//main function -we are calling the above defined functions in the main function as per the input given by the user
 void main()
 {
     int choice=1,n;
